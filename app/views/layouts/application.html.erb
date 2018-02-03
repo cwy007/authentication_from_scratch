@@ -11,8 +11,12 @@
   <body>
     <div class="container">
       <div class="user_header text-right my-3">
-        <%= link_to "Sign Up", new_user_path, class: 'btn btn-success' %>
-        <%= link_to "Log in", new_session_path, class: 'btn btn-outline-success' %>
+        <% if current_user %>
+          Logged in as <%= current_user.email %>.
+        <% else %>
+          <%= link_to "Sign Up", new_user_path, class: 'btn btn-success' %>
+          <%= link_to "Log in", new_session_path, class: 'btn btn-outline-success' %>
+        <% end %>
       </div>
 
       <%= yield %>
