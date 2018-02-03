@@ -11,10 +11,13 @@
   <body>
     <div class="container">
       <div class="user_header text-right my-3">
-        <%= link_to "Sign Up", new_user_path, class: 'btn btn-outline-success' %>
+        <%= link_to "Sign Up", new_user_path, class: 'btn btn-success' %>
+        <%= link_to "Log in", new_session_path, class: 'btn btn-outline-success' %>
       </div>
 
       <%= yield %>
+
+      <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
 </html>
