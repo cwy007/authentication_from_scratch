@@ -9,6 +9,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <div class="user_header text-right my-3">
+        <%= link_to "Sign Up", new_user_path, class: 'btn btn-outline-success' %>
+      </div>
+
+      <%= yield %>
+    </div>
   </body>
 </html>
