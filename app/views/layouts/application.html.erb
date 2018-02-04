@@ -10,16 +10,7 @@
 
   <body>
     <div class="container">
-      <div class="user_header text-right my-3">
-        <% if current_user %>
-          Logged in as <%= current_user.email %>
-          <%= link_to "Log Out", logout_path('current'), class: 'btn btn-outline-danger' %>
-        <% else %>
-          <%= link_to "Sign Up", signup_path, class: 'btn btn-success' %>
-          <%= link_to "Log In", login_path, class: 'btn btn-outline-success' %>
-        <% end %>
-      </div>
-
+      <%= render "shared/nav" %>
       <%= yield %>
 
       <%= debug(params) if Rails.env.development? %>
